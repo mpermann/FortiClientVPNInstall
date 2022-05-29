@@ -1,2 +1,2 @@
-# FortiClientVPNRemoveInstall.sh
+# FortiClientVPNInstall.sh
 Script to remove and install the FortiClient VPN software.
