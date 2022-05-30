@@ -59,6 +59,10 @@ else
     "$JAMF_BINARY" recon
     echo "Installing FortiClient settings"
     "$JAMF_BINARY" policy -event "$POLICY_TRIGGER_NAME_SETTINGS"
+    echo "Updating inventory"
+    "$JAMF_BINARY" recon
+    /bin/launchctl asuser "$USER_ID" /usr/bin/sudo -u "$CURRENT_USER" "$JAMF_HELPER" -windowType utility -windowPosition lr -title "$TITLE1" -description "$DESCRIPTION1" -icon "$LOGO" -button1 "$BUTTON1" -defaultButton "$DEFAULT_BUTTON"
+    /sbin/shutdown -r +1 &
 fi
 
 exit 0
