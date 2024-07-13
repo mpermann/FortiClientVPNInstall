@@ -1,16 +1,16 @@
 #!/bin/bash
 
 # Name: FortiClientVPNRemoveInstall.sh
-# Version: 1.0.2
+# Version: 1.0.3
 # Created: 05-27-2022 by Michael Permann
-# Modified: 06-09-2022
+# Modified: 07-13-2024
 # Purpose: Detects whether an existing version of FortiClient VPN is installed. If it is, the 
 # settings are backed up, the uninstaller is executed with the prompting of the end user, the 
 # new version is installed and the settings are moved back in to place.
 
 CURRENT_USER=$(scutil <<< "show State:/Users/ConsoleUser" | awk '/Name :/ && ! /loginwindow/ { print $3 }')
 USER_ID=$(/usr/bin/id -u "$CURRENT_USER")
-LOGO="/Library/Application Support/HeartlandAEA11/Images/HeartlandLogo@512px.png"
+LOGO="/Library/Management/PCC/Images/PCC1Logo@512px.png"
 JAMF_HELPER="/Library/Application Support/JAMF/bin/jamfHelper.app/Contents/MacOS/jamfHelper"
 JAMF_BINARY=$(which jamf)
 TITLE="Notification"
